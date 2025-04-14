@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="gamesrcipt.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<style>
+    body {
+        font-family: "Arial", sans-serif;
+        margin-top: 1%;
+    }
+
+    section {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .game--container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        text-align: center;
+        justify-content: center;
+        /* width: 306px; */
+        margin: 3px;
+        background-color: #11213a;
+        color: #04c0b2;
+    }
+
+    .cell {
+        font-family: "Permanent Marker", cursive;
+        width: 77px;
+        height: 77px;
+        /* box-shadow: 2px 2px 2px 2px #ecd7ba; */
+        border: 2px solid #ecd7ba;
+        cursor: pointer;
+        /* line-height: 100px; */
+        font-size: 45px;
+    }
+
+    .col-sm-4 {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <!-- <table style="width:150px;height: 150px;" class="table table-bordered"> -->
+    <div class="row">
+        <div class="col-4" style="position: relative;">
+            <table style="width:150px;height: 150px;position: absolute;right:0px;" class="table table-bordered">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-4" style="width: 100%;position: relative;">
+            <table style="width:150px;height: 150px;position: absolute;margin: 0 auto;" class="table table-bordered">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-4" style="position: relative;">
+            <table style="width:150px;height: 150px;position: absolute;left:0px;" class="table table-bordered">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- </table> -->
+
+    <!-- <section class="row">
+        <div class="col-4">
+            <div class="game--container">
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b11,1,1)" id="b11"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b12,2,1)" id="b12"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b13,3,1)" id="b13"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b14,4,1)" id="b14"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b15,5,1)" id="b15"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b16,6,1)" id="b16"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b17,7,1)" id="b17"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b18,8,1)" id="b18"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cell" onclick="clicked(b19,9,1)" id="b19"></div>
+                </div>
+            </div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b21,1,2)" id="b21"></div>
+            <div class="cell" onclick="clicked(b22,2,2)" id="b22"></div>
+            <div class="cell" onclick="clicked(b23,3,2)" id="b23"></div>
+            <div class="cell" onclick="clicked(b24,4,2)" id="b24"></div>
+            <div class="cell" onclick="clicked(b25,5,2)" id="b25"></div>
+            <div class="cell" onclick="clicked(b26,6,2)" id="b26"></div>
+            <div class="cell" onclick="clicked(b27,7,2)" id="b27"></div>
+            <div class="cell" onclick="clicked(b28,8,2)" id="b28"></div>
+            <div class="cell" onclick="clicked(b29,9,2)" id="b29"></div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b31,1,3)" id="b31"></div>
+            <div class="cell" onclick="clicked(b32,2,3)" id="b32"></div>
+            <div class="cell" onclick="clicked(b33,3,3)" id="b33"></div>
+            <div class="cell" onclick="clicked(b34,4,3)" id="b34"></div>
+            <div class="cell" onclick="clicked(b35,5,3)" id="b35"></div>
+            <div class="cell" onclick="clicked(b36,6,3)" id="b36"></div>
+            <div class="cell" onclick="clicked(b37,7,3)" id="b37"></div>
+            <div class="cell" onclick="clicked(b38,8,3)" id="b38"></div>
+            <div class="cell" onclick="clicked(b39,9,3)" id="b39"></div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b41,1,4)" id="b41"></div>
+            <div class="cell" onclick="clicked(b42,2,4)" id="b42"></div>
+            <div class="cell" onclick="clicked(b43,3,4)" id="b43"></div>
+            <div class="cell" onclick="clicked(b44,4,4)" id="b44"></div>
+            <div class="cell" onclick="clicked(b45,5,4)" id="b45"></div>
+            <div class="cell" onclick="clicked(b46,6,4)" id="b46"></div>
+            <div class="cell" onclick="clicked(b47,7,4)" id="b47"></div>
+            <div class="cell" onclick="clicked(b48,8,4)" id="b48"></div>
+            <div class="cell" onclick="clicked(b49,9,4)" id="b49"></div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b51,1,5)" id="b51"></div>
+            <div class="cell" onclick="clicked(b52,2,5)" id="b52"></div>
+            <div class="cell" onclick="clicked(b53,3,5)" id="b53"></div>
+            <div class="cell" onclick="clicked(b54,4,5)" id="b54"></div>
+            <div class="cell" onclick="clicked(b55,5,5)" id="b55"></div>
+            <div class="cell" onclick="clicked(b56,6,5)" id="b56"></div>
+            <div class="cell" onclick="clicked(b57,7,5)" id="b57"></div>
+            <div class="cell" onclick="clicked(b58,8,5)" id="b58"></div>
+            <div class="cell" onclick="clicked(b59,9,5)" id="b59"></div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b61,1,6)" id="b61"></div>
+            <div class="cell" onclick="clicked(b62,2,6)" id="b62"></div>
+            <div class="cell" onclick="clicked(b63,3,6)" id="b63"></div>
+            <div class="cell" onclick="clicked(b64,4,6)" id="b64"></div>
+            <div class="cell" onclick="clicked(b65,5,6)" id="b65"></div>
+            <div class="cell" onclick="clicked(b66,6,6)" id="b66"></div>
+            <div class="cell" onclick="clicked(b67,7,6)" id="b67"></div>
+            <div class="cell" onclick="clicked(b68,8,6)" id="b68"></div>
+            <div class="cell" onclick="clicked(b69,9,6)" id="b69"></div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b71,1,7)" id="b71"></div>
+            <div class="cell" onclick="clicked(b72,2,7)" id="b72"></div>
+            <div class="cell" onclick="clicked(b73,3,7)" id="b73"></div>
+            <div class="cell" onclick="clicked(b74,4,7)" id="b74"></div>
+            <div class="cell" onclick="clicked(b75,5,7)" id="b75"></div>
+            <div class="cell" onclick="clicked(b76,6,7)" id="b76"></div>
+            <div class="cell" onclick="clicked(b77,7,7)" id="b77"></div>
+            <div class="cell" onclick="clicked(b78,8,7)" id="b78"></div>
+            <div class="cell" onclick="clicked(b79,9,7)" id="b79"></div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b81,1,8)" id="b81"></div>
+            <div class="cell" onclick="clicked(b82,2,8)" id="b82"></div>
+            <div class="cell" onclick="clicked(b83,3,8)" id="b83"></div>
+            <div class="cell" onclick="clicked(b84,4,8)" id="b84"></div>
+            <div class="cell" onclick="clicked(b85,5,8)" id="b85"></div>
+            <div class="cell" onclick="clicked(b86,6,8)" id="b86"></div>
+            <div class="cell" onclick="clicked(b87,7,8)" id="b87"></div>
+            <div class="cell" onclick="clicked(b88,8,8)" id="b88"></div>
+            <div class="cell" onclick="clicked(b89,9,8)" id="b89"></div>
+        </div>
+        <div class="game--container">
+            <div class="cell" onclick="clicked(b91,1,9)" id="b91"></div>
+            <div class="cell" onclick="clicked(b92,2,9)" id="b92"></div>
+            <div class="cell" onclick="clicked(b93,3,9)" id="b93"></div>
+            <div class="cell" onclick="clicked(b94,4,9)" id="b94"></div>
+            <div class="cell" onclick="clicked(b95,5,9)" id="b95"></div>
+            <div class="cell" onclick="clicked(b96,6,9)" id="b96"></div>
+            <div class="cell" onclick="clicked(b97,7,9)" id="b97"></div>
+            <div class="cell" onclick="clicked(b98,8,9)" id="b98"></div>
+            <div class="cell" onclick="clicked(b99,9,9)" id="b99"></div>
+        </div>
+    </section> -->
+</body>
+
+</html>

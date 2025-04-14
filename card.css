@@ -1,0 +1,92 @@
+.card {
+    background-color: #f9f9f9;
+    height: 250px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px #00000012, 0 10px 10px #0000000f, 0 10px 10px #0000001a;
+    transition: 0.5s;
+}
+
+.card .col-4 img {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+}
+
+.veg img {
+    height: 20px;
+    /* text-align: left; */
+}
+
+.diet-desc {
+    font-size: 12px;
+    color: #a7a7aa;
+}
+
+.bestseller {
+    font-weight: 700;
+    color: #cca55e;
+    font-size: 15px;
+}
+
+.bestseller img {
+    position: relative;
+    top: -2px;
+    height: 15px;
+}
+
+.card-text {
+    font-size: 15px;
+}
+.custom-btn {
+    background-color: #00754a;
+    padding: 5px 10px;
+    box-shadow: 0 4px 15px #a3a3a3ad;
+    transition: background-color .167s cubic-bezier(.4, 0, .2, 1) 0s, box-shadow .167s cubic-bezier(.4, 0, .2, 1) 0s, color .167s cubic-bezier(.4, 0, .2, 1) 0s;
+}
+.col-6 .btn:hover{
+    background-color: #00754a;
+    color: white;
+}
+.card .row{
+    padding: 0 0 10px 0;
+}
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+    border: 1px #000 solid;
+    border-radius: 50px;
+    padding: 7px 16px;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .btn-dark-outline {
+    border-color: #000;
+    color: #000;
+  }
+  
+  .btn-dark-outline:hover,
+  .btn-light-outline:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+  
+  .btn-light-outline {
+    border-color: #fff;
+    color: #fff;
+  }
+  
+  .btn-dark {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .btn-dark:hover {
+    background-color: #333;
+  }
+  
